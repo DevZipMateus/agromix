@@ -1015,13 +1015,215 @@ ul { list-style: none; }
    ============================================= */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(36px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
+.reveal-right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.visible  { opacity: 1; transform: translateX(0); }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* =============================================
+   EFEITOS VISUAIS
+   ============================================= */
+
+/* Barra de progresso de scroll */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, var(--verde-logo), var(--verde), var(--marrom-claro));
+  z-index: 9999;
+  transition: width 0.08s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Header — encolhe levemente ao scrollar */
+#header.scrolled {
+  height: 60px;
+  box-shadow: 0 2px 28px rgba(0,0,0,0.14);
+}
+#header { transition: height 0.3s ease, box-shadow 0.3s ease; }
+
+/* Hero — padrão de pontos animados */
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(68,204,0,0.18) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: heroDots 18s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes heroDots {
+  0%   { background-position: 0 0; }
+  100% { background-position: 48px 48px; }
+}
+
+/* Hero — destaque no slogan */
+.hero-slogan {
+  position: relative;
+  display: inline-block;
+}
+.hero-slogan::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 2px;
+  background: var(--verde-logo);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: sloganLine 1.2s 0.8s ease forwards;
+}
+@keyframes sloganLine {
+  to { transform: scaleX(1); }
+}
+
+/* Botões — efeito de brilho (shine sweep) */
+.btn-primary,
+.btn-hero-vitrine,
+.btn-vitrine-card,
+.btn-whatsapp-contato {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after,
+.btn-hero-vitrine::after,
+.btn-vitrine-card::after,
+.btn-whatsapp-contato::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -80%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+.btn-primary:hover::after,
+.btn-hero-vitrine:hover::after,
+.btn-vitrine-card:hover::after,
+.btn-whatsapp-contato:hover::after {
+  left: 130%;
+}
+
+/* WhatsApp float — anel pulsante */
+.whatsapp-float {
+  position: fixed;
+}
+.whatsapp-float::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25D366;
+  z-index: -1;
+  animation: waPulse 2.8s ease-out infinite;
+}
+@keyframes waPulse {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* Badge do Sobre — flutua levemente */
+.sobre-badge {
+  animation: badgeFloat 3.2s ease-in-out infinite;
+}
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Ícone da seção História — brilho pulsante */
+.historia-icon i {
+  animation: iconGlow 2.2s ease-in-out infinite alternate;
+}
+@keyframes iconGlow {
+  from { filter: drop-shadow(0 0 3px rgba(68,204,0,0.3)); }
+  to   { filter: drop-shadow(0 0 14px rgba(68,204,0,0.9)); }
+}
+
+/* Números das Stats — brilho suave */
+.stat-num {
+  text-shadow: 0 0 24px rgba(68,204,0,0.45);
+}
+
+/* Stagger — cards de produtos */
+.produtos-grid .produto-card:nth-child(1) { transition-delay: 0.00s; }
+.produtos-grid .produto-card:nth-child(2) { transition-delay: 0.10s; }
+.produtos-grid .produto-card:nth-child(3) { transition-delay: 0.20s; }
+.produtos-grid .produto-card:nth-child(4) { transition-delay: 0.30s; }
+.produtos-grid .produto-card:nth-child(5) { transition-delay: 0.40s; }
+.produtos-grid .produto-card:nth-child(6) { transition-delay: 0.50s; }
+.produtos-grid .produto-card:nth-child(7) { transition-delay: 0.60s; }
+
+/* Stagger — cards MVV */
+.mvv-grid .mvv-card:nth-child(1) { transition-delay: 0.00s; }
+.mvv-grid .mvv-card:nth-child(2) { transition-delay: 0.18s; }
+.mvv-grid .mvv-card:nth-child(3) { transition-delay: 0.36s; }
+
+/* Stagger — cards de diferenciais */
+.diferenciais-grid .diferencial-card:nth-child(1) { transition-delay: 0.00s; }
+.diferenciais-grid .diferencial-card:nth-child(2) { transition-delay: 0.10s; }
+.diferenciais-grid .diferencial-card:nth-child(3) { transition-delay: 0.20s; }
+.diferenciais-grid .diferencial-card:nth-child(4) { transition-delay: 0.30s; }
+.diferenciais-grid .diferencial-card:nth-child(5) { transition-delay: 0.40s; }
+.diferenciais-grid .diferencial-card:nth-child(6) { transition-delay: 0.50s; }
+
+/* Cards — tilt 3D (JS aplica, CSS suaviza saída) */
+.produto-card,
+.mvv-card,
+.diferencial-card {
+  will-change: transform;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Seção Stats — anel decorativo animado no fundo */
+#stats {
+  position: relative;
+  isolation: isolate;
+}
+#stats::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(68,204,0,0.07) 0%, transparent 65%);
+  animation: statsGlow 5s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+.stats-grid { position: relative; z-index: 1; }
+@keyframes statsGlow {
+  from { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+  to   { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+/* Ícones de features da vitrine — aparecem com delay */
+.vitrine-features li {
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.produto-card--vitrine.visible .vitrine-features li:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.55s; }
+.produto-card--vitrine.visible .vitrine-features li:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.70s; }
+.produto-card--vitrine.visible .vitrine-features li:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.85s; }
 
 /* =============================================
    RESPONSIVIDADE
