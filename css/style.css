@@ -585,12 +585,12 @@ ul { list-style: none; }
 }
 .produtos-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
-/* Os 2 últimos cards (vitrine + cta) ficam mais largos centralizados */
-.produtos-grid .produto-card:nth-last-child(-n+2) {
-  grid-column: span 2;
+/* Card WhatsApp fica sozinho na última linha — centraliza na coluna do meio */
+.produto-card--cta {
+  grid-column: 2;
 }
 .produto-card {
   background: var(--branco);
@@ -1064,7 +1064,7 @@ ul { list-style: none; }
 
   .mvv-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
   .produtos-grid { grid-template-columns: repeat(2, 1fr); }
-  .produtos-grid .produto-card:nth-last-child(-n+2) { grid-column: span 1; }
+  .produto-card--cta { grid-column: auto; }
   .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
 
   .contato-grid { grid-template-columns: 1fr; }
@@ -1079,7 +1079,6 @@ ul { list-style: none; }
   #sobre, #mvv, #produtos, #historia, #diferenciais, #contato { padding: 72px 0; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .produtos-grid { grid-template-columns: 1fr; }
-  .produtos-grid .produto-card:nth-last-child(-n+2) { grid-column: span 1; }
   .diferenciais-grid { grid-template-columns: 1fr; }
   .contato-mapa { height: 280px; }
   .sobre-diferenciais { grid-template-columns: 1fr; }
