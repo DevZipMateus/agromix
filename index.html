@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agromix</title>
+  <meta name="description" content="Agromix — melhor atendimento com preços justos. Insumos, equipamentos e soluções completas para o agronegócio em Mossoró/RN.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2A6500">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Agromix">
+  <meta property="og:description" content="Melhor atendimento com preços justos. Insumos, equipamentos e soluções completas para o agronegócio.">
+  <meta property="og:image" content="images/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agromix">
+  <meta name="twitter:description" content="Melhor atendimento com preços justos. Insumos, equipamentos e soluções completas para o agronegócio.">
+  <meta name="twitter:image" content="images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css?v=1.0">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="#hero" class="logo-link" aria-label="Agromix — página inicial">
+        <img src="images/logo.png" alt="Logo Agromix" class="logo-img">
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- NAV MOBILE -->
+  <nav id="navMenu" aria-label="Menu principal">
+    <ul>
+      <li><a href="#sobre" onclick="closeNav()">Sobre</a></li>
+      <li><a href="#mvv" onclick="closeNav()">Missão e Valores</a></li>
+      <li><a href="#produtos" onclick="closeNav()">Produtos</a></li>
+      <li><a href="#historia" onclick="closeNav()">Nossa história</a></li>
+      <li><a href="#contato" onclick="closeNav()">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- NAV DESKTOP (dentro do header via CSS) -->
+  <div class="nav-desktop" aria-label="Navegação principal">
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#mvv">Missão e valores</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#historia">Nossa história</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero" aria-label="Apresentação Agromix">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Agromix</h1>
+      <h2>Soluções completas para o agronegócio — insumos, equipamentos e nutrição animal com a excelência que o campo merece</h2>
+      <p class="hero-slogan">Melhor atendimento com preços justos</p>
+      <div class="hero-btns">
+        <a href="#produtos" class="btn-primary">Ver produtos</a>
+        <a href="https://wa.me/5584994238567" class="btn-outline" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Fale conosco
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="stats" aria-label="Números da Agromix">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-num" data-target="15">0</span><span class="stat-unit">+</span>
+          <p>Anos de experiência</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="500">0</span><span class="stat-unit">+</span>
+          <p>Clientes atendidos</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="200">0</span><span class="stat-unit">+</span>
+          <p>Produtos disponíveis</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="6">0</span><span class="stat-unit"></span>
+          <p>Dias por semana</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" aria-labelledby="sobre-titulo">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-visual" aria-hidden="true">
+          <div class="sobre-img-wrap">
+            <div class="sobre-badge">
+              <i class="fas fa-seedling"></i>
+              <span>Agronegócio</span>
+            </div>
+            <div class="sobre-shape"></div>
+          </div>
+        </div>
+        <div class="sobre-text">
+          <span class="section-tag">Quem somos</span>
+          <h2 id="sobre-titulo">A Agromix ao lado de quem produz</h2>
+          <p>A Agromix nasceu do campo e para o campo. Com anos de experiência no agronegócio, entendemos de perto os desafios que o produtor rural enfrenta no dia a dia — e é exatamente por isso que oferecemos soluções reais, com produtos de qualidade e atendimento personalizado.</p>
+          <p>Trabalhamos com uma linha completa de materiais agrícolas, insumos para alimentação animal, equipamentos, acessórios e ferramentas, tudo reunido em um único lugar para facilitar a vida de quem vive da terra.</p>
+          <div class="sobre-diferenciais">
+            <div class="diferencial-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Produtos de alta qualidade</span>
+            </div>
+            <div class="diferencial-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Atendimento técnico especializado</span>
+            </div>
+            <div class="diferencial-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Preços justos e transparentes</span>
+            </div>
+            <div class="diferencial-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Parceria real com o produtor</span>
+            </div>
+          </div>
+          <a href="#contato" class="btn-primary">Entrar em contato</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MVV -->
+  <section id="mvv" aria-labelledby="mvv-titulo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nossa essência</span>
+        <h2 id="mvv-titulo">Missão, visão e valores</h2>
+        <p>Os pilares que guiam cada decisão da Agromix no campo e no balcão.</p>
+      </div>
+      <div class="mvv-grid">
+        <div class="mvv-card reveal">
+          <div class="mvv-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>Missão</h3>
+          <p>Promover a prosperidade no campo, oferecendo soluções integradas, nutrição de alta qualidade e tecnologia acessível para que o produtor rural alcance o máximo potencial de sua terra e de seu rebanho.</p>
+        </div>
+        <div class="mvv-card mvv-card--destaque reveal">
+          <div class="mvv-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3>Visão</h3>
+          <p>Ser a principal referência e parceira estratégica do agronegócio na nossa região, reconhecida pela excelência no atendimento, inovação constante e pelo compromisso inabalável com o sucesso de quem produz.</p>
+        </div>
+        <div class="mvv-card reveal">
+          <div class="mvv-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>Valores</h3>
+          <ul class="valores-list">
+            <li><i class="fas fa-leaf"></i> Parceria com o produtor</li>
+            <li><i class="fas fa-leaf"></i> Excelência no que faz</li>
+            <li><i class="fas fa-leaf"></i> Integridade e ética</li>
+            <li><i class="fas fa-leaf"></i> Inovação prática</li>
+            <li><i class="fas fa-leaf"></i> Respeito à terra</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section id="produtos" aria-labelledby="produtos-titulo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">O que oferecemos</span>
+        <h2 id="produtos-titulo">Nossos produtos</h2>
+        <p>Tudo que o produtor rural precisa, reunido em um só lugar.</p>
+      </div>
+      <div class="produtos-grid">
+        <div class="produto-card reveal">
+          <div class="produto-icon">
+            <i class="fas fa-tractor"></i>
+          </div>
+          <h3>Material agrícola</h3>
+          <p>Ampla linha de materiais para o manejo e cuidado da lavoura, garantindo produtividade e eficiência no campo.</p>
+          <a href="https://wa.me/5584994238567?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20material%20agrícola." class="produto-link" target="_blank" rel="noopener">
+            Solicitar orçamento <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="produto-card reveal">
+          <div class="produto-icon">
+            <i class="fas fa-drumstick-bite"></i>
+          </div>
+          <h3>Insumos para alimentação animal</h3>
+          <p>Suplementos, rações e insumos nutricionais selecionados para maximizar o desempenho do seu rebanho.</p>
+          <a href="https://wa.me/5584994238567?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20insumos%20para%20alimentação%20animal." class="produto-link" target="_blank" rel="noopener">
+            Solicitar orçamento <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="produto-card reveal">
+          <div class="produto-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Equipamentos</h3>
+          <p>Equipamentos de qualidade para aumentar a eficiência das suas operações agrícolas e pecuárias.</p>
+          <a href="https://wa.me/5584994238567?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20equipamentos." class="produto-link" target="_blank" rel="noopener">
+            Solicitar orçamento <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="produto-card reveal">
+          <div class="produto-icon">
+            <i class="fas fa-box-open"></i>
+          </div>
+          <h3>Acessórios</h3>
+          <p>Variedade de acessórios para o dia a dia no campo, facilitando o trabalho e o cuidado com os animais.</p>
+          <a href="https://wa.me/5584994238567?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20acessórios." class="produto-link" target="_blank" rel="noopener">
+            Solicitar orçamento <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="produto-card reveal">
+          <div class="produto-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Ferramentas</h3>
+          <p>Ferramentas duráveis e confiáveis para manutenção, construção e operação nas propriedades rurais.</p>
+          <a href="https://wa.me/5584994238567?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20ferramentas." class="produto-link" target="_blank" rel="noopener">
+            Solicitar orçamento <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="produto-card produto-card--cta reveal">
+          <div class="produto-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h3>Não encontrou o que precisa?</h3>
+          <p>Fale com nossa equipe e encontramos a solução ideal para a sua propriedade.</p>
+          <a href="https://wa.me/5584994238567?text=Olá!%20Preciso%20de%20ajuda%20para%20encontrar%20um%20produto." class="btn-primary" target="_blank" rel="noopener">
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTÓRIA -->
+  <section id="historia" aria-labelledby="historia-titulo">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <span class="section-tag section-tag--light">Nossa trajetória</span>
+        <h2 id="historia-titulo">Do campo para o campo</h2>
+        <p>Uma história construída com dedicação, conhecimento e amor pelo agronegócio.</p>
+      </div>
+      <div class="historia-content reveal">
+        <div class="historia-icon" aria-hidden="true">
+          <i class="fas fa-seedling"></i>
+        </div>
+        <div class="historia-texto">
+          <h3>O solo fértil da ideia</h3>
+          <p>A história da Agromix não começa em um escritório refrigerado na cidade, mas sim onde a poeira levanta e o sol castiga: no coração de uma propriedade, onde a teoria da nutrição animal encontra a prática do cocho.</p>
+          <p>Tudo começou com uma observação simples, mas poderosa. O fundador, um homem que conhecia tanto de zootecnia quanto de "aperto de mão", percebeu que o produtor rural enfrentava um dilema constante. De um lado, havia produtos baratos, mas de baixa eficiência; do outro, suplementos importados e caros que não levavam em conta a realidade do pasto brasileiro.</p>
+          <p>Dessa percepção nasceu a Agromix — uma empresa que entende o campo porque veio do campo. Hoje, somos referência em soluções agropecuárias na nossa região, honrando cada dia o compromisso com quem vive da terra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" aria-labelledby="diferenciais-titulo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Por que nos escolher</span>
+        <h2 id="diferenciais-titulo">Nossos diferenciais</h2>
+        <p>O que faz da Agromix a melhor escolha para o produtor rural.</p>
+      </div>
+      <div class="diferenciais-grid">
+        <div class="diferencial-card reveal">
+          <div class="diferencial-icon"><i class="fas fa-handshake"></i></div>
+          <h3>Atendimento personalizado</h3>
+          <p>Cada cliente recebe atenção individual. Nossos especialistas conhecem o campo e entendem as suas necessidades reais.</p>
+        </div>
+        <div class="diferencial-card reveal">
+          <div class="diferencial-icon"><i class="fas fa-tag"></i></div>
+          <h3>Preços justos</h3>
+          <p>Transparência total nos preços. Sem surpresas, sem letras miúdas. O produtor merece honestidade do balcão ao bolso.</p>
+        </div>
+        <div class="diferencial-card reveal">
+          <div class="diferencial-icon"><i class="fas fa-award"></i></div>
+          <h3>Produtos de qualidade</h3>
+          <p>Trabalhamos apenas com marcas e fornecedores confiáveis, garantindo eficiência e resultados reais para a sua produção.</p>
+        </div>
+        <div class="diferencial-card reveal">
+          <div class="diferencial-icon"><i class="fas fa-microscope"></i></div>
+          <h3>Conhecimento técnico</h3>
+          <p>Equipe com formação e experiência em zootecnia e agronomia. Orientamos o produtor na escolha certa para cada situação.</p>
+        </div>
+        <div class="diferencial-card reveal">
+          <div class="diferencial-icon"><i class="fas fa-clock"></i></div>
+          <h3>Horário ampliado</h3>
+          <p>Atendemos de segunda a sábado, com horário estendido para se adaptar à rotina do produtor rural.</p>
+        </div>
+        <div class="diferencial-card reveal">
+          <div class="diferencial-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Localização central</h3>
+          <p>Estamos no centro da cidade, de fácil acesso, para que você passe e resolva tudo com comodidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" aria-labelledby="contato-titulo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Fale com a gente</span>
+        <h2 id="contato-titulo">Entre em contato</h2>
+        <p>Estamos prontos para atender você. Venha nos visitar ou fale pelo WhatsApp.</p>
+      </div>
+      <div class="contato-grid">
+        <div class="contato-infos">
+          <div class="contato-card">
+            <div class="contato-item">
+              <div class="contato-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h3>Endereço</h3>
+                <p>Av. Jerônimo Rosado, 948, Centro</p>
+              </div>
+            </div>
+            <div class="contato-item">
+              <div class="contato-icon"><i class="fab fa-whatsapp"></i></div>
+              <div>
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/5584994238567" target="_blank" rel="noopener">(84) 99423-8567</a>
+              </div>
+            </div>
+            <div class="contato-item">
+              <div class="contato-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h3>E-mail</h3>
+                <a href="mailto:agromixcontatoba@gmail.com">agromixcontatoba@gmail.com</a>
+              </div>
+            </div>
+            <div class="contato-item">
+              <div class="contato-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <h3>Horário de funcionamento</h3>
+                <p>Segunda a sábado: 7h às 11h30 | 14h às 17h30</p>
+              </div>
+            </div>
+            <div class="contato-item">
+              <div class="contato-icon"><i class="fab fa-instagram"></i></div>
+              <div>
+                <h3>Instagram</h3>
+                <a href="https://instagram.com/_agro.mix" target="_blank" rel="noopener">@_agro.mix</a>
+              </div>
+            </div>
+          </div>
+          <a href="https://wa.me/5584994238567?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento." class="btn-whatsapp-contato" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Solicitar orçamento pelo WhatsApp
+          </a>
+        </div>
+        <div class="contato-mapa">
+          <iframe
+            title="Localização da Agromix — Av. Jerônimo Rosado, 948, Centro"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.0!2d-37.3445!3d-5.1878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAv.%20Jer%C3%B4nimo%20Rosado%2C%20948%2C%20Centro!5e0!3m2!1spt!2sbr!4v1683000000000"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Mapa com localização da Agromix">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Logo Agromix">
+      </div>
+      <p class="footer-slogan">Melhor atendimento com preços justos</p>
+      <div class="footer-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#mvv">Missão e valores</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#historia">Nossa história</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/_agro.mix" target="_blank" rel="noopener" aria-label="Instagram Agromix">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/5584994238567" target="_blank" rel="noopener" aria-label="WhatsApp Agromix">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:agromixcontatoba@gmail.com" aria-label="E-mail Agromix">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <p class="footer-copy">© 2025 Agromix · CNPJ 47.663.449/0001-01</p>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5584994238567" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar com a Agromix pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- RODAPÉ MONTESITE -->
+  <div id="montesite-footer-badge"></div>
+  <script src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"></script>
+
+  <script src="js/main.js?v=1.0"></script>
+</body>
+</html>
