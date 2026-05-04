@@ -484,15 +484,9 @@ ul { list-style: none; }
   box-shadow: var(--shadow-md);
 }
 .mvv-card--destaque {
-  background: var(--verde);
-  border-top-color: var(--verde-logo);
+  background: var(--branco);
+  border-top-color: var(--verde);
 }
-.mvv-card--destaque h3,
-.mvv-card--destaque p { color: var(--branco); }
-.mvv-card--destaque .mvv-icon { background: rgba(255,255,255,0.15); }
-.mvv-card--destaque .mvv-icon i { color: var(--verde-logo); }
-.mvv-card--destaque .valores-list li { color: rgba(255,255,255,0.92); }
-.mvv-card--destaque .valores-list li i { color: var(--verde-logo); }
 
 .mvv-icon {
   width: 56px;
