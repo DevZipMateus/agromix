@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitrine Online — Agromix</title>
+  <meta name="description" content="Conheça o catálogo completo da Agromix. Produtos agropecuários com os melhores preços.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#2A6500">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Open Sans', sans-serif;
+      background: #f5efe4;
+    }
+
+    /* HEADER — 80px fixo */
+    #header-vitrine {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 80px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+    }
+
+    .logo-link { display: flex; align-items: center; }
+    .logo-img  { height: 48px; width: auto; }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .header-nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #3a3a3a;
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .header-nav a:hover { color: #3A8B00; }
+
+    .btn-voltar {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #3A8B00;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .btn-voltar:hover {
+      background: #2A6500;
+      transform: translateY(-1px);
+    }
+
+    /* Menu toggle mobile */
+    .menu-toggle-v {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .menu-toggle-v span {
+      display: block;
+      width: 24px; height: 2px;
+      background: #4A2C0A;
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .menu-toggle-v.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle-v.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle-v.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Nav mobile dropdown */
+    #navMenuV {
+      position: fixed;
+      top: 80px; left: 0; right: 0;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      z-index: 99;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    #navMenuV.open { max-height: 320px; }
+    #navMenuV ul { padding: 12px 0; list-style: none; }
+    #navMenuV ul li a {
+      display: block;
+      padding: 13px 5%;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #3a3a3a;
+      text-decoration: none;
+      border-bottom: 1px solid #f5efe4;
+      transition: color 0.2s, background 0.2s;
+    }
+    #navMenuV ul li a:hover { color: #3A8B00; background: #f5efe4; }
+    #navMenuV ul li:last-child a {
+      color: #3A8B00;
+      font-weight: 700;
+    }
+
+    /* IFRAME WRAPPER — ocupa o espaço restante */
+    #iframe-wrapper {
+      position: fixed;
+      top: 80px;
+      left: 0; right: 0;
+      /* bottom reserva 63px para o badge MonteSite */
+      bottom: 63px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    #iframe-vitrine {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Badge MonteSite fica em baixo */
+    #montesite-footer-badge {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 63px;
+      z-index: 50;
+      background: #fff;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      .header-nav { display: none; }
+      .menu-toggle-v { display: flex; }
+    }
+    @media (max-width: 480px) {
+      .logo-img { height: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header-vitrine">
+    <a href="index.html" class="logo-link" aria-label="Voltar ao site Agromix">
+      <img src="images/logo.png" alt="Logo Agromix" class="logo-img">
+    </a>
+
+    <nav class="header-nav" aria-label="Navegação">
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#produtos">Produtos</a>
+      <a href="index.html#contato">Contato</a>
+      <a href="index.html" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar ao site
+      </a>
+    </nav>
+
+    <button class="menu-toggle-v" id="menuToggleV" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- NAV MOBILE -->
+  <nav id="navMenuV" aria-label="Menu mobile">
+    <ul>
+      <li><a href="index.html#sobre" onclick="closeNavV()">Sobre</a></li>
+      <li><a href="index.html#produtos" onclick="closeNavV()">Produtos</a></li>
+      <li><a href="index.html#contato" onclick="closeNavV()">Contato</a></li>
+      <li><a href="index.html" onclick="closeNavV()"><i class="fas fa-arrow-left"></i> Voltar ao site</a></li>
+    </ul>
+  </nav>
+
+  <!-- IFRAME -->
+  <div id="iframe-wrapper">
+    <iframe
+      id="iframe-vitrine"
+      src="https://fjm.egestor.com.br/vitrine/"
+      title="Vitrine online Agromix"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- RODAPÉ MONTESITE -->
+  <div id="montesite-footer-badge"></div>
+  <script src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"></script>
+
+  <script>
+    // Menu mobile
+    const toggleV = document.getElementById('menuToggleV');
+    const navV    = document.getElementById('navMenuV');
+
+    toggleV.addEventListener('click', () => {
+      const open = navV.classList.toggle('open');
+      toggleV.classList.toggle('active', open);
+      toggleV.setAttribute('aria-expanded', open);
+    });
+
+    function closeNavV() {
+      navV.classList.remove('open');
+      toggleV.classList.remove('active');
+      toggleV.setAttribute('aria-expanded', 'false');
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!navV.contains(e.target) && !toggleV.contains(e.target)) closeNavV();
+    });
+
+    // Recalcula altura do iframe dinamicamente
+    function resizeIframe() {
+      const HEADER = 80;
+      const BADGE  = 63;
+      const wrapper = document.getElementById('iframe-wrapper');
+      wrapper.style.height = (window.innerHeight - HEADER - BADGE) + 'px';
+    }
+
+    resizeIframe();
+    window.addEventListener('resize', resizeIframe);
+  </script>
+</body>
+</html>

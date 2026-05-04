@@ -40,7 +40,7 @@
   <!-- HEADER -->
   <header id="header">
     <div class="header-inner">
-      <a href="#hero" class="logo-link" aria-label="Agromix — página inicial">
+      <a href="index.html" class="logo-link" aria-label="Agromix — página inicial">
         <img src="images/logo.png" alt="Logo Agromix" class="logo-img">
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
@@ -53,10 +53,13 @@
   <nav id="navMenu" aria-label="Menu principal">
     <ul>
       <li><a href="#sobre" onclick="closeNav()">Sobre</a></li>
-      <li><a href="#mvv" onclick="closeNav()">Missão e Valores</a></li>
+      <li><a href="#mvv" onclick="closeNav()">Missão e valores</a></li>
       <li><a href="#produtos" onclick="closeNav()">Produtos</a></li>
       <li><a href="#historia" onclick="closeNav()">Nossa história</a></li>
       <li><a href="#contato" onclick="closeNav()">Contato</a></li>
+      <li><a href="vitrine.html" onclick="closeNav()" class="nav-vitrine-link">
+        <i class="fas fa-store"></i> Vitrine online
+      </a></li>
     </ul>
   </nav>
 
@@ -68,6 +71,9 @@
       <li><a href="#produtos">Produtos</a></li>
       <li><a href="#historia">Nossa história</a></li>
       <li><a href="#contato">Contato</a></li>
+      <li><a href="vitrine.html" class="nav-btn-vitrine">
+        <i class="fas fa-store"></i> Vitrine
+      </a></li>
     </ul>
   </div>
 
@@ -80,6 +86,9 @@
       <p class="hero-slogan">Melhor atendimento com preços justos</p>
       <div class="hero-btns">
         <a href="#produtos" class="btn-primary">Ver produtos</a>
+        <a href="vitrine.html" class="btn-hero-vitrine">
+          <i class="fas fa-store"></i> Ver vitrine online
+        </a>
         <a href="https://wa.me/5584994238567" class="btn-outline" target="_blank" rel="noopener">
           <i class="fab fa-whatsapp"></i> Fale conosco
         </a>
@@ -255,6 +264,24 @@
             Solicitar orçamento <i class="fas fa-arrow-right"></i>
           </a>
         </div>
+        <!-- CARD VITRINE -->
+        <div class="produto-card produto-card--vitrine reveal">
+          <div class="produto-icon">
+            <i class="fas fa-store"></i>
+          </div>
+          <h3>Catálogo completo online</h3>
+          <p>Explore todos os nossos produtos diretamente pela vitrine virtual. Preços, disponibilidade e detalhes — tudo na palma da mão.</p>
+          <ul class="vitrine-features">
+            <li><i class="fas fa-check"></i> Catálogo sempre atualizado</li>
+            <li><i class="fas fa-check"></i> Fácil de navegar</li>
+            <li><i class="fas fa-check"></i> Acesse de qualquer dispositivo</li>
+          </ul>
+          <a href="vitrine.html" class="btn-vitrine-card">
+            <i class="fas fa-store"></i> Acessar vitrine
+          </a>
+        </div>
+
+        <!-- CARD WHATSAPP -->
         <div class="produto-card produto-card--cta reveal">
           <div class="produto-icon">
             <i class="fab fa-whatsapp"></i>
