@@ -1226,24 +1226,37 @@ ul { list-style: none; }
 .produto-card--vitrine.visible .vitrine-features li:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.85s; }
 
 /* =============================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE  320px → 4K+
    ============================================= */
 
-/* Widescreen 4K */
+/* ── 4K ──────────────────────────────────── */
 @media (min-width: 1920px) {
   .container { max-width: 1400px; }
   .hero-content h1 { font-size: 6rem; }
+  .nav-desktop ul { gap: 40px; }
 }
 
-/* Desktop grande */
+/* ── Desktop grande (1281–1600px) ────────── */
+@media (max-width: 1600px) {
+  .sobre-grid { gap: 60px; }
+}
+
+/* ── Desktop médio (1025–1280px) ─────────── */
 @media (max-width: 1280px) {
   .sobre-grid { gap: 48px; }
+  /* produtos: 3 colunas, cta centralizado na col 2 */
   .produtos-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Desktop médio */
+/* Nav com gap menor para não colidir com o logo */
+@media (max-width: 1200px) {
+  .nav-desktop ul { gap: 20px; }
+  .nav-desktop ul li a { font-size: 0.82rem; }
+}
+
+/* ── Tablet landscape / desktop pequeno (≤1023px) ── */
 @media (max-width: 1023px) {
-  /* Parallax desativado */
+  /* Parallax desativado — evita bugs iOS/Android */
   #hero {
     background:
       linear-gradient(rgba(42,101,0,0.82), rgba(42,101,0,0.82)),
@@ -1257,56 +1270,158 @@ ul { list-style: none; }
     background-attachment: scroll, scroll;
   }
 
+  /* Navegação */
   .nav-desktop { display: none; }
   .menu-toggle { display: flex; }
 
-  .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+  /* Sobre */
+  .sobre-grid { grid-template-columns: 1fr; gap: 36px; }
   .sobre-visual { order: -1; }
   .sobre-img-wrap { max-width: 300px; margin: 0 auto; }
 
-  .mvv-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+  /* MVV — 2 colunas no tablet */
+  .mvv-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+  /* Produtos — 2 colunas, cta automático */
   .produtos-grid { grid-template-columns: repeat(2, 1fr); }
   .produto-card--cta { grid-column: auto; }
+
+  /* Diferenciais — 2 colunas */
   .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
 
+  /* Contato */
   .contato-grid { grid-template-columns: 1fr; }
   .contato-mapa { height: 320px; }
 
+  /* História */
   .historia-content { grid-template-columns: 1fr; text-align: center; padding: 36px 28px; }
   .historia-icon { margin: 0 auto 16px; }
+
+  /* Espaçamento seções */
+  #sobre, #mvv, #produtos, #historia, #diferenciais, #contato { padding: 80px 0; }
+  .section-header { margin-bottom: 44px; }
 }
 
-/* Tablet */
+/* ── Tablet portrait (≤767px) ─────────────── */
 @media (max-width: 767px) {
-  #sobre, #mvv, #produtos, #historia, #diferenciais, #contato { padding: 72px 0; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .produtos-grid { grid-template-columns: 1fr; }
-  .diferenciais-grid { grid-template-columns: 1fr; }
-  .contato-mapa { height: 280px; }
+  #sobre, #mvv, #produtos, #historia, #diferenciais, #contato { padding: 64px 0; }
+  #stats { padding: 32px 0; }
+
+  /* Stats — 2 colunas */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  /* MVV — 1 coluna centralizada */
+  .mvv-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+
+  /* Sobre diferenciais — 1 coluna */
   .sobre-diferenciais { grid-template-columns: 1fr; }
-  #stats { padding: 36px 0; }
+
+  /* Contato */
+  .contato-mapa { height: 260px; }
+
+  /* Section header */
+  .section-header { margin-bottom: 32px; }
+  .section-header p { font-size: 0.95rem; }
+
+  /* Historia */
+  .historia-content { padding: 28px 20px; gap: 20px; }
+
+  /* Footer */
+  .footer-links { gap: 10px 20px; }
+  .footer-logo img { height: 44px; }
+
+  /* Reveals laterais viram reveals para cima no mobile — evita scroll horizontal */
+  .reveal-left  { transform: translateY(28px); }
+  .reveal-right { transform: translateY(28px); }
+  .reveal-left.visible,
+  .reveal-right.visible { transform: translateY(0); }
 }
 
-/* Mobile grande */
+/* ── Mobile grande (≤640px) ──────────────── */
+@media (max-width: 640px) {
+  /* Produtos e diferenciais — 1 coluna */
+  .produtos-grid    { grid-template-columns: 1fr; }
+  .diferenciais-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Mobile médio (≤540px) ──────────────── */
 @media (max-width: 540px) {
-  :root { --header-h: 64px; }
-  .logo-img { height: 40px; }
-  .hero-btns { flex-direction: column; align-items: center; }
-  .btn-primary, .btn-outline { width: 100%; max-width: 280px; justify-content: center; }
-  .contato-card { padding: 24px; }
-  .historia-content { padding: 28px 20px; }
+  :root { --header-h: 60px; }
+  .logo-img { height: 38px; }
+
+  /* Hero — botões empilhados */
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .btn-primary,
+  .btn-outline,
+  .btn-hero-vitrine {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  .hero-content { padding: 32px 16px; }
+  .hero-content h2 { font-size: 0.97rem; }
+
+  /* Cards — padding menor */
+  .mvv-card,
+  .produto-card,
+  .diferencial-card { padding: 28px 20px; }
+
+  /* Contato */
+  .contato-card { padding: 20px; }
+  .contato-mapa { height: 240px; }
+
+  /* Sobre */
+  .sobre-img-wrap { max-width: 240px; }
+  .sobre-badge { right: 0; bottom: -8px; }
+
+  /* Historia */
+  .historia-content { padding: 22px 16px; }
+
+  /* Stats */
+  .stat-num { font-size: clamp(1.7rem, 6vw, 2.4rem); }
+  .stat-unit { font-size: clamp(1.3rem, 4vw, 1.8rem); }
+  .stat-item p { font-size: 0.8rem; }
+
+  /* Seções */
+  #sobre, #mvv, #produtos, #historia, #diferenciais, #contato { padding: 52px 0; }
+  #stats { padding: 24px 0; }
+  .section-header { margin-bottom: 28px; }
 }
 
-/* Mobile pequeno */
-@media (max-width: 380px) {
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .stat-num { font-size: 1.8rem; }
-  .mvv-card, .produto-card, .diferencial-card { padding: 28px 20px; }
-  .footer-links { gap: 12px 20px; }
+/* ── Mobile pequeno (≤430px) ──────────────── */
+@media (max-width: 430px) {
+  .stats-grid { gap: 8px; }
+  .stat-item { padding: 12px 8px; }
+
+  .contato-item { gap: 12px; }
+  .contato-icon { width: 36px; height: 36px; flex-shrink: 0; }
+
+  .footer-links { gap: 8px 16px; }
+  .footer-links a { font-size: 0.78rem; }
+
+  .mvv-card, .produto-card, .diferencial-card { padding: 24px 16px; }
+
+  .hero-content h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
 }
 
-/* Mobile mínimo 320px */
+/* ── Mobile mínimo (≤320px) ──────────────── */
 @media (max-width: 320px) {
   html { font-size: 14px; }
-  .whatsapp-float { width: 48px; height: 48px; font-size: 1.3rem; bottom: 18px; right: 18px; }
+  .container { width: 95%; }
+
+  .btn-primary,
+  .btn-outline,
+  .btn-hero-vitrine { max-width: 100%; font-size: 0.82rem; padding: 11px 18px; }
+
+  .whatsapp-float { width: 48px; height: 48px; font-size: 1.3rem; bottom: 16px; right: 16px; }
+
+  .sobre-img-wrap { max-width: 200px; }
+  .sobre-badge { display: none; }
+
+  .historia-content { padding: 18px 12px; }
+  .footer-social a { width: 36px; height: 36px; font-size: 0.9rem; }
 }
