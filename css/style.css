@@ -345,7 +345,7 @@ ul { list-style: none; }
 }
 .stat-item p {
   font-size: 0.88rem;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.90);
   margin-top: 6px;
   font-weight: 500;
 }
@@ -491,6 +491,8 @@ ul { list-style: none; }
 .mvv-card--destaque p { color: var(--branco); }
 .mvv-card--destaque .mvv-icon { background: rgba(255,255,255,0.15); }
 .mvv-card--destaque .mvv-icon i { color: var(--verde-logo); }
+.mvv-card--destaque .valores-list li { color: rgba(255,255,255,0.92); }
+.mvv-card--destaque .valores-list li i { color: var(--verde-logo); }
 
 .mvv-icon {
   width: 56px;
@@ -778,7 +780,7 @@ ul { list-style: none; }
   font-family: 'Montserrat', sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--cinza-suave);
+  color: #4A4A4A;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 2px;
@@ -842,7 +844,7 @@ ul { list-style: none; }
 .footer-slogan {
   font-size: 0.85rem;
   font-style: italic;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.78);
   margin-bottom: 28px;
 }
 .footer-links {
@@ -880,9 +882,9 @@ ul { list-style: none; }
 .footer-social a:hover { background: var(--verde); color: var(--branco); }
 .footer-copy {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.40);
+  color: rgba(255,255,255,0.65);
   padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.10);
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 
 /* =============================================
